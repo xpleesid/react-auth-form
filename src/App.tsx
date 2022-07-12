@@ -4,15 +4,18 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.module.css';
+import { LocaleProvider } from 'locales';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ContentPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <LocaleProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ContentPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </LocaleProvider>
   );
 };
 
