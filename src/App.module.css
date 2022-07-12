@@ -10,6 +10,10 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+body {
+  background: radial-gradient(circle, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 100%, rgb(2 0 36 / 100%) 100%);
+}
+
 h1 {
   font-size: 32px;
   margin-bottom: 18px;
