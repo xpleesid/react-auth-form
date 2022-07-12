@@ -5,6 +5,7 @@ const esbuild = require('esbuild');
 const cssModulesPlugin = require('esbuild-css-modules-plugin');
 const devServer = require('esbuild-plugin-dev-server');
 const postCssPlugin = require('@deanc/esbuild-plugin-postcss');
+const { clean: cleanPlugin } = require('esbuild-plugin-clean');
 
 const cssNextPlugin = require('postcss-cssnext');
 const cssNanoPlugin = require('cssnano');
@@ -51,6 +52,9 @@ const plugins = [
 `,
       },
     ],
+  }),
+  cleanPlugin({
+    patterns: ['./public/*'],
   }),
 ];
 
