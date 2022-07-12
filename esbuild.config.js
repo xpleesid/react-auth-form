@@ -31,8 +31,6 @@ const plugins = [
       {
         entryPoints: ['src/App.tsx'],
         filename: 'index.html',
-        assetNames: 'assets/[name]-[hash]',
-        chunkNames: '[ext]/[name]-[hash]',
         htmlTemplate: `
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +52,7 @@ const plugins = [
     ],
   }),
   cleanPlugin({
-    patterns: ['./public/*'],
+    patterns: ['./public/assets/*'],
   }),
 ];
 
@@ -64,14 +62,12 @@ if (process.env.NODE_ENV === 'dev') {
 
 esbuild.build({
   entryPoints: ['./src/App.tsx'],
-  entryNames: '[name]-[hash]',
+  entryNames: '/assets/[name]-[hash]',
   bundle: true,
   minify: true,
   metafile: true,
   format: 'esm',
   sourcemap: process.env.NODE_ENV === 'dev' ? 'inline' : false,
   outdir: 'public',
-  assetNames: 'assets/[name]-[hash]',
-  chunkNames: '[ext]/[name]-[hash]',
   plugins,
 });
