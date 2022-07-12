@@ -1,3 +1,5 @@
+import { AuthData, AuthDataSchema } from './AuthService.types';
+
 // for simplicity we're gonna use a bunch of simple functions as "service" and localStorage as "token" storage
 // while reading code below, keep a few caveats in mind:
 
@@ -9,14 +11,13 @@
 
 const AUTH_FIELD = 'AUTH_FIELD';
 
-export const loginUser = (email: string, session: string): void => {
-  localStorage.setItem(
-    AUTH_FIELD,
-    JSON.stringify({
-      email,
-      session,
-    })
-  );
+export const loginUser = (email: string, sessionId: string): void => {
+  const authData: AuthData = {
+    email,
+    sessionId,
+  };
+
+  localStorage.setItem(AUTH_FIELD, JSON.stringify(authData));
 };
 
 export const getLoggedInUserEmailOrNull = (): string | null => {
@@ -26,9 +27,15 @@ export const getLoggedInUserEmailOrNull = (): string | null => {
     return null;
   }
 
-  const parsedData = JSON.parse(authData);
+  try {
+    const parsedData = JSON.parse(authData);
 
-  return parsedData.email || null;
+    if (!AuthDataSchema.guard(parsedData)) return null;
+
+    return parsedData.email;
+  } catch {
+    return null;
+  }
 };
 
 export const logoutUser = (): void => {
