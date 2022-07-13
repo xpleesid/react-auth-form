@@ -1,12 +1,13 @@
-.legend {
-  display: none;
-}
-
+.legend,
+.languageName,
 .radio {
-  width: 0;
-  height: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
   position: absolute;
-  pointer-events: none;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .radio:focus {

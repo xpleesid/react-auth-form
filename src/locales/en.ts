@@ -1,6 +1,11 @@
 import { LocaleMessages } from './locales.types';
 
 export const enMessages: LocaleMessages = {
+  language: {
+    legendText: 'Language',
+    ru: 'Russian',
+    en: 'English',
+  },
   pages: {
     auth: {
       title: "Hello, we've been waiting for you!",

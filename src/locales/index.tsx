@@ -1,5 +1,6 @@
 import { TranslationsProvider } from '@eo-locale/react';
 import React from 'react';
+import { saveSelectedLocale } from 'services/LocaleService/LocaleService';
 import { enMessages } from './en';
 import { Language, Locale } from './locales.types';
 import { ruMessages } from './ru';
@@ -62,6 +63,7 @@ export const LocaleProvider = ({ children }: LocaleProviderProps) => {
           type: 'SET_LANGUAGE',
           payload: language,
         });
+        saveSelectedLocale(language);
       },
     }),
     [state]
