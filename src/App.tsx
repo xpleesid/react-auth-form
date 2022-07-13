@@ -6,15 +6,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.module.css';
 import { LocaleProvider } from 'locales';
 import './services/ApiService/ApiService';
+import { Page } from 'ui/Page/Page';
 
 const App = () => {
   return (
     <LocaleProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<ContentPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Page>
+          <Routes>
+            <Route path="/" element={<ContentPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Page>
       </BrowserRouter>
     </LocaleProvider>
   );
