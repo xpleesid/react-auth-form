@@ -42,7 +42,10 @@ const reducer = (state: LocaleState, action: Action): LocaleState => {
   }
 };
 
-export const LocaleContext = React.createContext(initialLocaleState);
+export const LocaleContext = React.createContext({
+  language: initialLocaleState.language,
+  setLanguage: (_: Language) => {},
+});
 
 interface LocaleProviderProps {
   children: React.ReactNode;

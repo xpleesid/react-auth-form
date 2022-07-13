@@ -6,6 +6,7 @@ const cssModulesPlugin = require('esbuild-css-modules-plugin');
 const devServer = require('esbuild-plugin-dev-server');
 const postCssPlugin = require('@deanc/esbuild-plugin-postcss');
 const { clean: cleanPlugin } = require('esbuild-plugin-clean');
+const svgrPlugin = require('esbuild-plugin-svgr');
 
 const cssNextPlugin = require('postcss-cssnext');
 const cssNanoPlugin = require('cssnano');
@@ -54,6 +55,7 @@ const plugins = [
   cleanPlugin({
     patterns: ['./public/assets/*'],
   }),
+  svgrPlugin(),
 ];
 
 if (process.env.NODE_ENV === 'dev') {

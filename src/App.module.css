@@ -1,3 +1,11 @@
+:root {
+  --bg-primary-color: #00d4ff;
+  --bg-secondary-color: #2e3250;
+  --accent-color: #f9b17a;
+  --text-primary-color: #fff;
+  --text-secondary-color: #636b98;
+}
+
 .main {
   background: rgb(172 216 102);
 }
@@ -11,7 +19,7 @@ body {
 }
 
 body {
-  background: radial-gradient(circle, rgb(0 212 255 / 100%) 0%, rgb(9 9 121 / 100%) 100%, rgb(2 0 36 / 100%) 100%);
+  background: radial-gradient(circle, var(--bg-primary-color) 0%, rgb(9 9 121 / 100%) 100%, rgb(2 0 36 / 100%) 100%);
 }
 
 h1 {

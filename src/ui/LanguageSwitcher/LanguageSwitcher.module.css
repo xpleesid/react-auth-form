@@ -1,0 +1,33 @@
+.legend {
+  display: none;
+}
+
+.radio {
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.radio:focus {
+  width: 24px;
+  height: 16px;
+  appearance: none;
+}
+
+.label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+}
+
+.label:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.activeLabel {
+  border-bottom: 3px solid var(--accent-color);
+}
