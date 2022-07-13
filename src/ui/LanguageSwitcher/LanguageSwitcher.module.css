@@ -1,6 +1,5 @@
 .legend,
-.languageName,
-.radio {
+.languageName {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -10,10 +9,17 @@
   width: 1px;
 }
 
-.radio:focus {
-  width: 24px;
-  height: 16px;
+.radio {
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
   appearance: none;
+}
+
+.radio:focus {
+  width: 60px;
+  height: 50px;
 }
 
 .label {
@@ -21,12 +27,8 @@
   justify-content: center;
   align-items: center;
 
-  width: 40px;
-  height: 40px;
-}
-
-.label:focus {
-  border: 1px solid var(--accent-color);
+  width: 60px;
+  height: 50px;
 }
 
 .activeLabel {

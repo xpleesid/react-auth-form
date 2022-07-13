@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './Icon.types';
 
-export const RuFlagIcon = ({ width = 24, height = 16 }: IconProps) => {
+export const RuFlagIcon = ({ width = 40, height = 30 }: IconProps) => {
   return (
     <svg width={width} height={height} viewBox="0 0 640 480" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <g fillRule="evenodd" strokeWidth="1pt">

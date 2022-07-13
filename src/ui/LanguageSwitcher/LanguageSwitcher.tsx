@@ -30,6 +30,7 @@ export const LanguageSwitcher = () => {
       <legend className={style.legend}>
         <Text id="language.legendText" />
       </legend>
+
       <label htmlFor="ru" className={classnames(style.label, language === 'ru' && style.activeLabel)}>
         <span className={style.languageName}>
           <Text id="language.ru" />
