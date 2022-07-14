@@ -3,13 +3,13 @@ import React from 'react';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
-import style from './AuthForm.module.css';
+import style from './SigninForm.module.css';
 
-interface AuthFormProps {
+interface SigninFormProps {
   className?: string;
 }
 
-export const AuthForm = ({ className }: AuthFormProps) => {
+export const SigninForm = ({ className }: SigninFormProps) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -49,8 +49,6 @@ export const AuthForm = ({ className }: AuthFormProps) => {
 
         <Button type="submit">Login</Button>
       </form>
-
-      <button type="button">Forgot password?</button>
     </div>
   );
 };
