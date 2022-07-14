@@ -7,6 +7,8 @@ import './App.module.css';
 import { LocaleProvider } from 'locales';
 import './services/ApiService/ApiService';
 import { Page } from 'ui/Page/Page';
+import { isLoggedIn } from 'services/AuthService/AuthService';
+import { AuthPage } from 'Pages/Auth/AuthPage';
 
 const App = () => {
   return (
@@ -14,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Page>
           <Routes>
-            <Route path="/" element={<ContentPage />} />
+            <Route path="/" element={isLoggedIn() ? <ContentPage /> : <AuthPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Page>
