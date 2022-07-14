@@ -9,6 +9,7 @@ import './services/ApiService/ApiService';
 import { Page } from 'ui/Page/Page';
 import { isLoggedIn } from 'services/AuthService/AuthService';
 import { AuthPage } from 'Pages/Auth/AuthPage';
+import { RecoverPasswordPage } from 'Pages/RecoverPassword/RecoverPassword';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Page>
           <Routes>
             <Route path="/" element={isLoggedIn() ? <ContentPage /> : <AuthPage />} />
+            <Route path="/recover-password" element={<RecoverPasswordPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Page>

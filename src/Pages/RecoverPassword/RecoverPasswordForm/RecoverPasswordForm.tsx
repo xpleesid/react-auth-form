@@ -1,14 +1,10 @@
-import classnames from 'classnames';
 import React from 'react';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
+import { Link } from 'react-router-dom';
 import style from './RecoverPasswordForm.module.css';
 
-interface RecoverPasswordFormProps {
-  className?: string;
-}
-
-export const RecoverPasswordForm = ({ className }: RecoverPasswordFormProps) => {
+export const RecoverPasswordForm = () => {
   const [email, setEmail] = React.useState('');
 
   const handleSubmit = React.useCallback<React.FormEventHandler<HTMLFormElement>>(
@@ -19,8 +15,11 @@ export const RecoverPasswordForm = ({ className }: RecoverPasswordFormProps) => 
   );
 
   return (
-    <div className={classnames(style.wrapper, className)}>
-      <p className={style.reminder}>We will send recovery link to your email</p>
+    <div className={style.wrapper}>
+      <Link className={style.link} to="/">
+        ← Return to main page
+      </Link>
+      <h2 className={style.header}>We'll send recovery link to your email</h2>
       <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"

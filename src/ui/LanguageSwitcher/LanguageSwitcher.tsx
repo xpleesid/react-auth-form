@@ -26,7 +26,7 @@ export const LanguageSwitcher = () => {
   }, []);
 
   return (
-    <fieldset>
+    <fieldset className={style.wrapper}>
       <legend className={style.legend}>
         <Text id="language.legendText" />
       </legend>

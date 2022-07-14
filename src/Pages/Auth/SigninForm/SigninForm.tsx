@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
+import style from './SigninForm.module.css';
 
 interface SigninFormProps {
   className?: string;
@@ -44,7 +46,12 @@ export const SigninForm = ({ className }: SigninFormProps) => {
           required
         />
 
-        <Button type="submit">Login</Button>
+        <div className={style.buttons}>
+          <Button type="submit">Sign in</Button>
+          <Link className={style.link} to="/recover-password">
+            Help! I forgot my password
+          </Link>
+        </div>
       </form>
     </div>
   );
