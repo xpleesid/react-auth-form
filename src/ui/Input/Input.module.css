@@ -1,0 +1,57 @@
+.wrapper {
+  margin-bottom: 24px;
+}
+
+.labelWrapper {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.label {
+  color: var(--text-secondary-color);
+  font-size: 24px;
+  text-align: left;
+}
+
+.input,
+.input:active {
+  width: 100%;
+  height: 80px;
+
+  padding: 20px;
+
+  background: #434769;
+
+  color: #fff;
+}
+
+.input:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.inputWithRightIcon {
+  padding-right: 70px;
+}
+
+.hint {
+  margin-top: 10px;
+
+  color: var(--text-secondary-color);
+  font-size: 20px;
+  text-align: left;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.rightIconWrapper {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.rightIconWrapper:empty {
+  display: none;
+}

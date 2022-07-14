@@ -1,5 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Input } from 'ui/Input/Input';
+import { PasswordInput } from 'ui/Input/PasswordInput';
 import style from './AuthForm.module.css';
 
 interface AuthFormProps {
@@ -19,32 +21,30 @@ export const AuthForm = ({ className }: AuthFormProps) => {
 
   return (
     <div className={classnames(style.wrapper, className)}>
-      <h2>Войдите, чтобы продолжить</h2>
+      <h2 className={style.header}>Войдите, чтобы продолжить</h2>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
+        <Input
           type="email"
-          id="email"
+          name="email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(value) => setEmail(value)}
+          label="Email"
+          placeholder="example@mail.com"
+          hint="Enter email in standard format"
           required
-          aria-describedby="email-hint"
         />
-        <p id="email-hint">Enter email in standard format.</p>
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
+        <PasswordInput
+          name="password"
           value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          onChange={(value) => setPassword(value)}
+          label="Password"
+          hint="From 3 to 20 symbols. Allowed symbols: lowercase and uppercase letters, numbers"
           minLength={3}
           maxLength={20}
           pattern="[a-zA-Z0-9]{3,20}"
           required
-          aria-describedby="password-hint"
         />
-        <p id="password-hint">From 3 to 20 symbols. Allowed symbols: lowercase and uppercase letters, number.</p>
 
         <input type="submit" value="Login" />
       </form>
