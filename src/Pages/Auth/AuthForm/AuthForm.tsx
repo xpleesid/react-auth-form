@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
 import style from './AuthForm.module.css';
@@ -46,7 +47,7 @@ export const AuthForm = ({ className }: AuthFormProps) => {
           required
         />
 
-        <input type="submit" value="Login" />
+        <Button type="submit">Login</Button>
       </form>
 
       <button type="button">Forgot password?</button>
