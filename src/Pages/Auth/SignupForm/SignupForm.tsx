@@ -1,9 +1,7 @@
-import classnames from 'classnames';
 import React from 'react';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
-import style from './SignupForm.module.css';
 
 interface SignupFormProps {
   className?: string;
@@ -22,7 +20,7 @@ export const SignupForm = ({ className }: SignupFormProps) => {
   );
 
   return (
-    <div className={classnames(style.wrapper, className)}>
+    <div className={className}>
       <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"

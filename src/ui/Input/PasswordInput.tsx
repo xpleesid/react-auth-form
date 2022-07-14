@@ -21,10 +21,10 @@ export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
 
   const handleEyeClick = React.useCallback(() => {
     setShowPassword((value) => !value);
+    inputRef.current?.focus();
   }, []);
 
   React.useEffect(() => {
-    inputRef.current?.focus();
     restoreCaretPosition();
   }, [showPassword]);
 

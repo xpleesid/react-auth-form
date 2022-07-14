@@ -30,7 +30,6 @@ export const AuthPage = () => {
             ]}
           />
         </div>
-        <SigninForm className={style.authForm} />
       </h1>
     </div>
   );

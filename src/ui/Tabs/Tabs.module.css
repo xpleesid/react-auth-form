@@ -1,11 +1,11 @@
 .tabsWrapper {
   display: flex;
 
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .tab {
-  margin: 0 15px;
+  margin-right: 30px;
 
   cursor: pointer;
 }
