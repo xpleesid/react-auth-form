@@ -1,0 +1,15 @@
+.tabsWrapper {
+  display: flex;
+
+  margin-bottom: 12px;
+}
+
+.tab {
+  margin: 0 15px;
+
+  cursor: pointer;
+}
+
+.activeTab {
+  box-shadow: 0 2px 0 0 var(--accent-color);
+}

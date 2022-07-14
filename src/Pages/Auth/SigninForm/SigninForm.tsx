@@ -1,9 +1,7 @@
-import classnames from 'classnames';
 import React from 'react';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
-import style from './SigninForm.module.css';
 
 interface SigninFormProps {
   className?: string;
@@ -21,8 +19,7 @@ export const SigninForm = ({ className }: SigninFormProps) => {
   );
 
   return (
-    <div className={classnames(style.wrapper, className)}>
-      <h2 className={style.header}>Войдите, чтобы продолжить</h2>
+    <div className={className}>
       <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"

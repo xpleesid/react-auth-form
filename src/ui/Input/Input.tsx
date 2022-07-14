@@ -11,7 +11,7 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
 }
 
 export const Input = React.forwardRef(
-  ({ name, onChange, label, hint, rightIcon, ...rest }: InputProps, ref: React.Ref<HTMLInputElement>) => {
+  ({ name, onChange, label, hint, rightIcon, className, ...rest }: InputProps, ref: React.Ref<HTMLInputElement>) => {
     return (
       <div className={style.wrapper}>
         <div className={style.labelWrapper}>
@@ -22,7 +22,7 @@ export const Input = React.forwardRef(
 
         <div className={style.inputWrapper}>
           <input
-            className={classNames(style.input, rightIcon && style.inputWithRightIcon)}
+            className={classNames(className, style.input, rightIcon && style.inputWithRightIcon)}
             onChange={(event) => onChange(event.target.value)}
             name={name}
             id={name}

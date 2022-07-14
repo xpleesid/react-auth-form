@@ -23,7 +23,6 @@ export const SignupForm = ({ className }: SignupFormProps) => {
 
   return (
     <div className={classnames(style.wrapper, className)}>
-      <h2 className={style.header}>Войдите, чтобы продолжить</h2>
       <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"

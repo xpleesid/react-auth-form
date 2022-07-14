@@ -6,10 +6,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost';
   children: React.ReactNode;
 }
-export const Button = ({ children, variant = 'primary', ...rest }: ButtonProps) => {
+export const Button = ({ children, className, variant = 'primary', ...rest }: ButtonProps) => {
   return (
     <button
-      className={classNames(style.button, {
+      className={classNames(className, style.button, {
         [style.primaryBtn]: variant === 'primary',
         [style.secondaryBtn]: variant === 'secondary',
         [style.ghostBtn]: variant === 'ghost',
