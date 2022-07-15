@@ -20,6 +20,12 @@ export interface LocaleMessages {
       title: string;
     };
   };
+  errors: {
+    unknownError: string;
+    unexpectedError: string;
+    invalidCredentials: string;
+    userAlreadyExists: string;
+  };
 }
 
 export interface Locale {

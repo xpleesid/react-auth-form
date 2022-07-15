@@ -17,4 +17,10 @@ export const enMessages: LocaleMessages = {
       title: 'How did you get here?',
     },
   },
+  errors: {
+    unknownError: 'Unknown error',
+    unexpectedError: 'Unexpected server error',
+    invalidCredentials: 'Invalid credentials',
+    userAlreadyExists: 'User with this email already exists',
+  },
 };
