@@ -16,8 +16,39 @@ export interface LocaleMessages {
     content: {
       title: string;
     };
+    recoverPassword: {
+      title: string;
+    };
     notFound: {
       title: string;
+    };
+  };
+  forms: {
+    signin: {
+      tabHeader: string;
+      emailLabel: string;
+      emailHint: string;
+      passwordLabel: string;
+      passwordHint: string;
+      submitText: string;
+      forgotPasswordText: string;
+    };
+    signup: {
+      tabHeader: string;
+      emailLabel: string;
+      emailHint: string;
+      passwordLabel: string;
+      passwordHint: string;
+      repeatPasswordLabel: string;
+      repeatPasswordHint: string;
+      submitText: string;
+    };
+    recoverPassword: {
+      returnToMainPage: string;
+      header: string;
+      emailLabel: string;
+      emailHint: string;
+      submitText: string;
     };
   };
   errors: {

@@ -1,3 +1,4 @@
+import { Text, useTranslator } from '@eo-locale/react';
 import axios from 'axios';
 import React from 'react';
 import { useMutation } from 'react-query';
@@ -15,6 +16,8 @@ interface SigninFormProps {
 }
 
 export const SigninForm = ({ className }: SigninFormProps) => {
+  const translator = useTranslator();
+
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -42,9 +45,9 @@ export const SigninForm = ({ className }: SigninFormProps) => {
           name="email"
           value={email}
           onChange={(value) => setEmail(value)}
-          label="Email"
+          label={translator.translate('forms.signin.emailLabel')}
           placeholder="example@mail.com"
-          hint="Enter email in standard format"
+          hint={translator.translate('forms.signin.emailHint')}
           required
         />
 
@@ -52,8 +55,8 @@ export const SigninForm = ({ className }: SigninFormProps) => {
           name="password"
           value={password}
           onChange={(value) => setPassword(value)}
-          label="Password"
-          hint="From 3 to 20 symbols. Allowed symbols: lowercase and uppercase letters, numbers"
+          label={translator.translate('forms.signin.passwordLabel')}
+          hint={translator.translate('forms.signin.passwordHint')}
           minLength={3}
           maxLength={20}
           pattern="[a-zA-Z0-9]{3,20}"
@@ -61,9 +64,11 @@ export const SigninForm = ({ className }: SigninFormProps) => {
         />
 
         <div className={style.buttons}>
-          <Button type="submit">Sign in</Button>
+          <Button type="submit">
+            <Text id="forms.signin.submitText" />
+          </Button>
           <Link className={style.link} to="/recover-password">
-            Help! I forgot my password
+            <Text id="forms.signin.forgotPasswordText" />
           </Link>
         </div>
       </form>

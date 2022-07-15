@@ -13,8 +13,39 @@ export const enMessages: LocaleMessages = {
     content: {
       title: 'Here is some content for you',
     },
+    recoverPassword: {
+      title: 'Forgot password? No problem!',
+    },
     notFound: {
       title: 'How did you get here?',
+    },
+  },
+  forms: {
+    signin: {
+      tabHeader: 'Sign in',
+      emailLabel: 'Email',
+      emailHint: 'Enter email in standard format',
+      passwordLabel: 'Password',
+      passwordHint: 'From 3 to 20 symbols. Allowed symbols: lowercase and uppercase letters, numbers',
+      submitText: 'Sign in',
+      forgotPasswordText: 'Help! I forgot my password',
+    },
+    signup: {
+      tabHeader: 'Sign up',
+      emailLabel: 'Email',
+      emailHint: 'Enter email in standard format',
+      passwordLabel: 'Password',
+      passwordHint: 'From 3 to 20 symbols. Allowed symbols: lowercase and uppercase letters, numbers',
+      repeatPasswordLabel: 'Repeat password',
+      repeatPasswordHint: 'Passwords should be equal',
+      submitText: 'Sign up',
+    },
+    recoverPassword: {
+      returnToMainPage: 'Return to main page',
+      header: "We'll send recovery link to your email",
+      emailLabel: 'Email',
+      emailHint: 'Enter email in standard format',
+      submitText: 'Get link',
     },
   },
   errors: {

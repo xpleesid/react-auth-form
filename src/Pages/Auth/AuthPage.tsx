@@ -1,4 +1,4 @@
-import { Text } from '@eo-locale/react';
+import { Text, useTranslator } from '@eo-locale/react';
 import React from 'react';
 import { Tabs } from 'ui/Tabs/Tabs';
 import style from './AuthPage.module.css';
@@ -6,6 +6,8 @@ import { SigninForm } from './SigninForm/SigninForm';
 import { SignupForm } from './SignupForm/SignupForm';
 
 export const AuthPage = () => {
+  const translator = useTranslator();
+
   const [activeTab, setActiveTab] = React.useState('signin');
 
   return (
@@ -19,12 +21,12 @@ export const AuthPage = () => {
             tabs={[
               {
                 value: 'signin',
-                label: 'Sign in',
+                label: translator.translate('forms.signin.tabHeader'),
                 content: <SigninForm />,
               },
               {
                 value: 'signup',
-                label: 'Sign up',
+                label: translator.translate('forms.signup.tabHeader'),
                 content: <SignupForm />,
               },
             ]}
