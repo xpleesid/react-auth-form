@@ -49,6 +49,7 @@ export const ruMessages: LocaleMessages = {
       emailLabel: 'Почта',
       emailHint: 'Введите емейл в стандартном формате',
       submitText: 'Получить ссылку',
+      successMessage: 'Всё супер! Открой последнее входящее письмо и нажми на полученную ссылку',
     },
   },
   errors: {

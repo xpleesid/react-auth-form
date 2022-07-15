@@ -51,6 +51,7 @@ export interface LocaleMessages {
       emailLabel: string;
       emailHint: string;
       submitText: string;
+      successMessage: string;
     };
   };
   errors: {

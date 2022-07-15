@@ -49,6 +49,7 @@ export const enMessages: LocaleMessages = {
       emailLabel: 'Email',
       emailHint: 'Enter email in standard format',
       submitText: 'Get link',
+      successMessage: 'Great success! Check your latest inbox email and click on received link',
     },
   },
   errors: {
