@@ -63,4 +63,7 @@ export const enMessages: LocaleMessages = {
     invalidCredentials: 'Invalid credentials',
     userAlreadyExists: 'User with this email already exists',
   },
+  password: {
+    eyeIconLabel: 'Switch password visibility',
+  },
 };

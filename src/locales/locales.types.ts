@@ -63,6 +63,9 @@ export interface LocaleMessages {
     invalidCredentials: string;
     userAlreadyExists: string;
   };
+  password: {
+    eyeIconLabel: string;
+  };
 }
 
 export interface Locale {

@@ -62,4 +62,7 @@ export const ruMessages: LocaleMessages = {
     invalidCredentials: 'Неверная почта или пароль',
     userAlreadyExists: 'Пользователь с такой почтой уже зарегистрирован',
   },
+  password: {
+    eyeIconLabel: 'Переключить видимость пароля',
+  },
 };

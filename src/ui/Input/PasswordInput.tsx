@@ -1,3 +1,4 @@
+import { useTranslator } from '@eo-locale/react';
 import React from 'react';
 import { EyeIcon } from 'ui/Icon/Eye';
 import { EyeClosedIcon } from 'ui/Icon/EyeClosed';
@@ -7,6 +8,8 @@ import style from './PasswordInput.module.css';
 type PasswordInputProps = Exclude<InputProps, 'type'>;
 
 export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
+  const translator = useTranslator();
+
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -35,7 +38,12 @@ export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
         ref={inputRef}
         {...rest}
         rightIcon={
-          <button type="button" className={style.iconBtn} onClick={handleEyeClick} aria-hidden="true">
+          <button
+            type="button"
+            className={style.iconBtn}
+            onClick={handleEyeClick}
+            aria-label={translator.translate('password.eyeIconLabel')}
+          >
             {showPassword ? <EyeIcon /> : <EyeClosedIcon />}
           </button>
         }
