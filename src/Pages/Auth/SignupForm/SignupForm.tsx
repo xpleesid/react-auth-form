@@ -12,6 +12,16 @@ export const SignupForm = ({ className }: SignupFormProps) => {
   const [password, setPassword] = React.useState('');
   const [passwordRepeat, setPasswordRepeat] = React.useState('');
 
+  const [arePasswordsEqual, setPasswordsEqual] = React.useState(true);
+
+  React.useEffect(() => {
+    if (password !== passwordRepeat) {
+      setPasswordsEqual(false);
+    } else {
+      setPasswordsEqual(true);
+    }
+  }, [password, passwordRepeat]);
+
   const handleSubmit = React.useCallback<React.FormEventHandler<HTMLFormElement>>(
     (event) => {
       event.preventDefault();
@@ -53,6 +63,8 @@ export const SignupForm = ({ className }: SignupFormProps) => {
           minLength={3}
           maxLength={20}
           pattern="[a-zA-Z0-9]{3,20}"
+          hint={arePasswordsEqual ? undefined : 'Passwords should be equal'}
+          isErrorHint={!arePasswordsEqual}
           required
         />
 

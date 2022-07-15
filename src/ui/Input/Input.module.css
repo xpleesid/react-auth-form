@@ -41,6 +41,10 @@
   text-align: left;
 }
 
+.errorHint {
+  color: var(--error-color);
+}
+
 .inputWrapper {
   position: relative;
 }

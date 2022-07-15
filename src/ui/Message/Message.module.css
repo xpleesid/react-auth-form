@@ -7,9 +7,9 @@
 }
 
 .successMessage {
-  background: rgb(135 240 86);
+  background: var(--success-color);
 }
 
 .errorMessage {
-  background: rgb(230 81 81);
+  background: var(--error-color);
 }

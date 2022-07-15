@@ -4,6 +4,8 @@
   --accent-color: #f9b17a;
   --text-primary-color: #fff;
   --text-secondary-color: #636b98;
+  --success-color: #60d450;
+  --error-color: #ce6c69;
 }
 
 .main {
