@@ -21,6 +21,11 @@ export const enMessages: LocaleMessages = {
     },
     notFound: {
       title: 'How did you get here?',
+      description1:
+        "You totally should not be here. Did you do something wrong? Or is it our fault? Can't tell right away...",
+      description2:
+        "Okay, let's focus on what we can do right now. See that link down below? Come on, give it a nice solid click. It will take you straight back to the main page.",
+      returnToMainPage: 'Return to main page',
     },
   },
   forms: {
