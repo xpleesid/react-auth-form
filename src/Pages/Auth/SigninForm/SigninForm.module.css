@@ -17,3 +17,13 @@
 .errorMessage {
   margin-bottom: 32px;
 }
+
+@media (max-width: 700px) {
+  .errorMessage {
+    margin-bottom: 16px;
+  }
+
+  .link {
+    font-size: 16px;
+  }
+}

@@ -40,3 +40,9 @@
 .activeLabel {
   border-bottom: 3px solid var(--accent-color);
 }
+
+@media (max-width: 700px) {
+  .wrapper {
+    margin-bottom: 0;
+  }
+}

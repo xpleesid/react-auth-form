@@ -11,7 +11,7 @@ export const AuthPage = () => {
   const [activeTab, setActiveTab] = React.useState('signin');
 
   return (
-    <div className={style.wrapper}>
+    <div>
       <h1>
         <Text id="pages.auth.title" />
         <div className={style.formWrapper}>

@@ -24,3 +24,13 @@
 .link:hover {
   color: var(--text-primary-color);
 }
+
+@media (max-width: 700px) {
+  .description {
+    font-size: 18px;
+  }
+
+  .link {
+    font-size: 16px;
+  }
+}

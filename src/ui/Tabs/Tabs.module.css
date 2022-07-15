@@ -13,3 +13,13 @@
 .activeTab {
   box-shadow: 0 2px 0 0 var(--accent-color);
 }
+
+@media (max-width: 700px) {
+  .tabsWrapper {
+    margin-bottom: 24px;
+  }
+
+  .tab {
+    margin-right: 0;
+  }
+}

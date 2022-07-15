@@ -13,3 +13,11 @@
 .errorMessage {
   background: var(--error-color);
 }
+
+@media (max-width: 700px) {
+  .message {
+    padding: 16px 12px 12px;
+
+    font-size: 18px;
+  }
+}
