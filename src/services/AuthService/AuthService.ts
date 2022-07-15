@@ -1,3 +1,4 @@
+import { AUTH_STORAGE_KEY } from 'constants/auth';
 import { AuthData, AuthDataSchema } from './AuthService.types';
 
 // for simplicity we're gonna use a bunch of simple functions as "service" and localStorage as "token" storage
@@ -9,20 +10,18 @@ import { AuthData, AuthDataSchema } from './AuthService.types';
 
 // 2. Function-based approach looks good, but lacks scalability. For real-life apps i'd prefer classes with DI (e.g. inversify)
 
-const AUTH_FIELD = 'AUTH_FIELD';
-
 export const loginUser = (email: string, sessionId: string): void => {
   const authData: AuthData = {
     email,
     sessionId,
   };
 
-  localStorage.setItem(AUTH_FIELD, JSON.stringify(authData));
+  localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(authData));
   window.dispatchEvent(new Event('storage'));
 };
 
 export const getLoggedInUserEmailOrNull = (): string | null => {
-  const authData = localStorage.getItem(AUTH_FIELD);
+  const authData = localStorage.getItem(AUTH_STORAGE_KEY);
 
   if (!authData) {
     return null;
@@ -40,7 +39,7 @@ export const getLoggedInUserEmailOrNull = (): string | null => {
 };
 
 export const logoutUser = (): void => {
-  localStorage.removeItem(AUTH_FIELD);
+  localStorage.removeItem(AUTH_STORAGE_KEY);
   window.dispatchEvent(new Event('storage'));
 };
 
