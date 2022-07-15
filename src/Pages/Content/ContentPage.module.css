@@ -10,3 +10,10 @@
 .button {
   margin: 20px auto 0;
 }
+
+.email {
+  margin-bottom: 24px;
+
+  text-align: center;
+  font-size: 28px;
+}

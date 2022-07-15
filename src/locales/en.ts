@@ -11,10 +11,10 @@ export const enMessages: LocaleMessages = {
       title: "Hello, we've been waiting for you!",
     },
     content: {
-      title: 'Here is some content for you',
       description:
-        "This content can only be seen by authenticated users. But there isn't much here. Except for this logout button.",
+        "This page can only be seen by authenticated users. But there isn't much here. Except for this logout button.",
       logoutText: 'Log out',
+      email: 'Your email',
     },
     recoverPassword: {
       title: 'Forgot password? No problem!',

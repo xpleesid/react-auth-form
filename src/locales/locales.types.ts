@@ -14,9 +14,9 @@ export interface LocaleMessages {
       title: string;
     };
     content: {
-      title: string;
       description: string;
       logoutText: string;
+      email: string;
     };
     recoverPassword: {
       title: string;

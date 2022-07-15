@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text } from '@eo-locale/react';
 import { Button } from 'ui/Button/Button';
-import { logoutUser } from 'services/AuthService/AuthService';
+import { getLoggedInUserEmailOrNull, logoutUser } from 'services/AuthService/AuthService';
 import style from './ContentPage.module.css';
 
 export const ContentPage = () => {
   return (
     <div className={style.wrapper}>
       <h1>
-        <Text id="pages.content.title" />
+        <Text id="pages.content.email" />: {getLoggedInUserEmailOrNull()}
       </h1>
       <p className={style.description}>
         <Text id="pages.content.description" />
