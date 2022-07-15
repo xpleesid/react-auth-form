@@ -2,7 +2,7 @@ import { Text, useTranslator } from '@eo-locale/react';
 import axios from 'axios';
 import React from 'react';
 import { useMutation } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { SigninParams } from 'services/ApiService/ApiService.types';
 import { loginUser } from 'services/AuthService/AuthService';
 import { extractMessageFromError } from 'services/ErrorService/ErrorService';
@@ -41,6 +41,9 @@ export const SigninForm = ({ className }: SigninFormProps) => {
     }
   }, [mutation.isSuccess]);
 
+  if (mutation.isSuccess) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className={className}>
       {mutation.isError && (

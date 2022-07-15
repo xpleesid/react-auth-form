@@ -18,6 +18,7 @@ export const loginUser = (email: string, sessionId: string): void => {
   };
 
   localStorage.setItem(AUTH_FIELD, JSON.stringify(authData));
+  window.dispatchEvent(new Event('storage'));
 };
 
 export const getLoggedInUserEmailOrNull = (): string | null => {
@@ -40,6 +41,7 @@ export const getLoggedInUserEmailOrNull = (): string | null => {
 
 export const logoutUser = (): void => {
   localStorage.removeItem(AUTH_FIELD);
+  window.dispatchEvent(new Event('storage'));
 };
 
 export const isLoggedIn = (): boolean => {

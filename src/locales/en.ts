@@ -12,6 +12,9 @@ export const enMessages: LocaleMessages = {
     },
     content: {
       title: 'Here is some content for you',
+      description:
+        "This content can only be seen by authenticated users. But there isn't much here. Except for this logout button.",
+      logoutText: 'Log out',
     },
     recoverPassword: {
       title: 'Forgot password? No problem!',

@@ -15,13 +15,27 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 const queryClient = new QueryClient();
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = React.useState(isLoggedIn());
+
+  React.useEffect(() => {
+    const handleStorageEvent = () => {
+      setLoggedIn(isLoggedIn());
+    };
+
+    window.addEventListener('storage', handleStorageEvent);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageEvent);
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <LocaleProvider>
         <BrowserRouter>
           <Page>
             <Routes>
-              <Route path="/" element={isLoggedIn() ? <ContentPage /> : <AuthPage />} />
+              <Route path="/" element={loggedIn ? <ContentPage /> : <AuthPage />} />
               <Route path="/recover-password" element={<RecoverPasswordPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
