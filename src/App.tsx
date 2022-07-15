@@ -10,20 +10,25 @@ import { Page } from 'ui/Page/Page';
 import { isLoggedIn } from 'services/AuthService/AuthService';
 import { AuthPage } from 'Pages/Auth/AuthPage';
 import { RecoverPasswordPage } from 'Pages/RecoverPassword/RecoverPassword';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <LocaleProvider>
-      <BrowserRouter>
-        <Page>
-          <Routes>
-            <Route path="/" element={isLoggedIn() ? <ContentPage /> : <AuthPage />} />
-            <Route path="/recover-password" element={<RecoverPasswordPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Page>
-      </BrowserRouter>
-    </LocaleProvider>
+    <QueryClientProvider client={queryClient}>
+      <LocaleProvider>
+        <BrowserRouter>
+          <Page>
+            <Routes>
+              <Route path="/" element={isLoggedIn() ? <ContentPage /> : <AuthPage />} />
+              <Route path="/recover-password" element={<RecoverPasswordPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Page>
+        </BrowserRouter>
+      </LocaleProvider>
+    </QueryClientProvider>
   );
 };
 

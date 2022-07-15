@@ -12,3 +12,7 @@
 .link:hover {
   color: var(--accent-color);
 }
+
+.errorMessage {
+  margin-bottom: 32px;
+}

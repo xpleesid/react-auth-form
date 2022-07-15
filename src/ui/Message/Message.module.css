@@ -1,0 +1,15 @@
+.message {
+  padding: 30px 20px 20px;
+
+  text-align-last: left;
+  font-size: 26px;
+  color: var(--text-primary-color);
+}
+
+.successMessage {
+  background: rgb(135 240 86);
+}
+
+.errorMessage {
+  background: rgb(230 81 81);
+}

@@ -1,8 +1,13 @@
+import axios from 'axios';
 import React from 'react';
+import { useMutation } from 'react-query';
 import { Link } from 'react-router-dom';
+import { SigninParams } from 'services/ApiService/ApiService.types';
+import { extractMessageFromError } from 'services/ErrorService/ErrorService';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
 import { PasswordInput } from 'ui/Input/PasswordInput';
+import { Message } from 'ui/Message/Message';
 import style from './SigninForm.module.css';
 
 interface SigninFormProps {
@@ -13,15 +18,24 @@ export const SigninForm = ({ className }: SigninFormProps) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
+  const mutation = useMutation((params: SigninParams) => axios.post('/signin', params));
+
   const handleSubmit = React.useCallback<React.FormEventHandler<HTMLFormElement>>(
     (event) => {
       event.preventDefault();
+      mutation.mutate({
+        email,
+        password,
+      });
     },
     [email, password]
   );
 
   return (
     <div className={className}>
+      {mutation.isError && (
+        <Message className={style.errorMessage} type="error" message={extractMessageFromError(mutation.error)} />
+      )}
       <form action="" onSubmit={handleSubmit}>
         <Input
           type="email"
