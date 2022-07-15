@@ -4,6 +4,7 @@ import React from 'react';
 import { useMutation } from 'react-query';
 import { Link } from 'react-router-dom';
 import { SigninParams } from 'services/ApiService/ApiService.types';
+import { loginUser } from 'services/AuthService/AuthService';
 import { extractMessageFromError } from 'services/ErrorService/ErrorService';
 import { Button } from 'ui/Button/Button';
 import { Input } from 'ui/Input/Input';
@@ -33,6 +34,12 @@ export const SigninForm = ({ className }: SigninFormProps) => {
     },
     [email, password]
   );
+
+  React.useEffect(() => {
+    if (mutation.isSuccess) {
+      loginUser(email, 'SOME_SESSION_ID');
+    }
+  }, [mutation.isSuccess]);
 
   return (
     <div className={className}>
